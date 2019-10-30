@@ -84,13 +84,25 @@
 				</configuration>
 			</plugin>
 			<plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>2.19.1</version>
-	  <configuration>
-        <testFailureIgnore>true</testFailureIgnore>
-    </configuration>
-        </plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${mavenSurefirePluginVersion}</version>
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.maven.surefire</groupId>
+            <artifactId>surefire-junit47</artifactId>
+            <version>2.20.1</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <useSystemClassLoader>false</useSystemClassLoader>
+          <skipTests>false</skipTests>
+          <includes>
+            <include>**/*.class&lt;/include>
+          </includes>
+          <excludedGroups>com.my.package.IntegrationTest</excludedGroups>
+        </configuration>
+      </plugin>
 		</plugins>
 	</build>
 	
