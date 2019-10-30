@@ -98,7 +98,7 @@
           <useSystemClassLoader>false</useSystemClassLoader>
           <skipTests>false</skipTests>
           <includes>
-            <include>**/*.class&lt;/include>
+            <include>**/*.class</include>
           </includes>
           <excludedGroups>com.my.package.IntegrationTest</excludedGroups>
         </configuration>
