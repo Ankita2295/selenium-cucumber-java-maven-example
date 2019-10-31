@@ -100,6 +100,7 @@
                 </dependency>
             </dependencies>
             <configuration>
+		 <useSystemClassLoader>false</useSystemClassLoader>
                 <threadCount>1</threadCount>
             </configuration>
         </plugin>
